@@ -1,5 +1,7 @@
 function App() {
-  return <h1>پروژه دیوار</h1>;
+  return <div>
+    <h1>پروژه دیوار</h1>
+  </div>;
 }
 
 export default App;

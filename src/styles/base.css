@@ -1,0 +1,44 @@
+@layer base {
+  html {
+    @apply font-persian font-light leading-[1.5];
+  }
+
+  body {
+    @apply m-auto max-w-[1400px] min-h-screen p-[10px];
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+  button,
+  input,
+  select {
+    @apply font-[inherit];
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-[26px];
+  }
+  h3 {
+    @apply text-[22px];
+  }
+  h4 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-sm;
+  }
+  h6 {
+    @apply text-xs;
+  }
+}
