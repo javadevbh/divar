@@ -13,7 +13,6 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
     const { response, error } = await sendOtp(mobile);
     if (response) setStep(2);
     if (error) notify("error", "مشکلی پیش آمده، لطفا بعدا تلاش کنید");
-    console.log({ response, error });
   };
 
   return (

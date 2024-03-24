@@ -1,4 +1,5 @@
 import { checkOtp } from "../../services/auth";
+import { setCookie } from "../../utils/cookie";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import notify from "../../helpers/toastify";
@@ -10,6 +11,9 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
     if (code.length !== 5) return notify("error", "کد تایید باید 5 رقم باشد");
 
     const { response, error } = await checkOtp(mobile, code);
+    if (response) {
+      setCookie(response.data);
+    }
     if (error) notify("error", "کد تایید اشتباه است یا زمان آن منقضی شده است");
     console.log({ response, error });
   };
