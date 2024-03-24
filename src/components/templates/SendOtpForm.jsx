@@ -23,8 +23,11 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
         برای استفاده از امکانات دیوار، لطفا شماره موبایل خود را وارد کنید. کد
         تایید به این شماره پیامک خواهد شد.
       </span>
+      <label htmlFor="input">شماره موبایل خود را وارد کنید</label>
       <input
         type="text"
+        id="input"
+        placeholder="شماره موبایل"
         value={mobile}
         onChange={(e) => setMobile(e.target.value)}
       />
