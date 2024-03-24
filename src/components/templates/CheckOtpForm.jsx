@@ -1,8 +1,8 @@
-import { checkOtp } from "../../services/auth";
-import { setCookie } from "../../utils/cookie";
+import { checkOtp } from "services/auth";
+import { setCookie } from "utils/cookie";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import notify from "../../helpers/toastify";
+import notify from "helpers/toastify";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {
   const submitHandler = async (e) => {
