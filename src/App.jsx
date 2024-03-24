@@ -1,12 +1,11 @@
-//Pages
-import AuthPage from "pages/AuthPage";
+import { BrowserRouter } from "react-router-dom";
+import Router from "router/Router";
 
 function App() {
   return (
-    <div>
-      <h1>پروژه دیوار</h1>
-      <AuthPage />
-    </div>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 
