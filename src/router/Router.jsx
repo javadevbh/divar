@@ -16,7 +16,7 @@ function Router() {
   });
   console.log({ data, isPending, error });
 
-  if(isPending) return <h1>Loading...</h1>
+  if (isPending) return <h1>Loading...</h1>;
 
   return (
     <Routes>
