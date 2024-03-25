@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getProfile as queryFn } from "services/user";
 import { checkOtp } from "services/auth";
 import { setCookie } from "utils/cookie";
 import { ToastContainer } from "react-toastify";
@@ -5,6 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 import notify from "helpers/toastify";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {
+  const navigate = useNavigate();
+  const { refetch } = useQuery({
+    queryKey: ["profile"],
+    queryFn,
+  });
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -13,9 +21,10 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
     const { response, error } = await checkOtp(mobile, code);
     if (response) {
       setCookie(response.data);
+      navigate("/");
+      refetch();
     }
     if (error) notify("error", "کد تایید اشتباه است یا زمان آن منقضی شده است");
-    console.log({ response, error });
   };
 
   return (
