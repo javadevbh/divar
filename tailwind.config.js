@@ -10,6 +10,7 @@ export default {
       colors: {
         primary: {
           red: "#a62626",
+          gray: "rgba(0,0,0,.12)"
         },
       },
       animation: {

@@ -44,7 +44,7 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
           className="border border-gray-400 rounded-[5px] p-2 text-sm focus:border-primary-red"
         />
       </div>
-      <button type="submit" className="btn btn-md">
+      <button type="submit" className="btn-red btn-md">
         ارسال کد تایید
       </button>
       <ToastContainer rtl={true} />

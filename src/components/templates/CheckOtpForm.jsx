@@ -61,7 +61,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
           تغییر شماره موبایل
         </button>
       </div>
-      <button type="submit" className="btn btn-md">
+      <button type="submit" className="btn-red btn-md">
         ورود
       </button>
       <ToastContainer rtl={true} />
