@@ -1,6 +1,6 @@
 @layer base {
   html {
-    @apply font-persian font-light leading-[1.5];
+    @apply font-persian leading-[1.5];
   }
 
   body {
@@ -13,7 +13,7 @@
   button,
   input,
   select {
-    @apply font-[inherit];
+    @apply font-[inherit] outline-none;
   }
   h1,
   h2,

@@ -1,0 +1,8 @@
+@layer components {
+  .btn {
+    @apply text-right bg-primary-red text-white rounded-md;
+  }
+  .btn-md {
+    @apply w-32 p-2 flex justify-center text-sm;
+  }
+}

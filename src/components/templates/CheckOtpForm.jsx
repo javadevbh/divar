@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile as queryFn } from "services/user";
@@ -9,10 +10,16 @@ import notify from "helpers/toastify";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {
   const navigate = useNavigate();
+  const input = useRef();
   const { refetch } = useQuery({
     queryKey: ["profile"],
     queryFn,
   });
+
+  useEffect(() => {
+    input.current.focus();
+  }, []);
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -28,19 +35,35 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <p>تایید کد پیامک شده</p>
-      <span>کد پیامک شده به شماره {mobile} را وارد کنید</span>
+    <form
+      onSubmit={submitHandler}
+      className=" mt-24 mx-auto max-w-[500px] border border-gray-400 rounded-[5px] p-7 pb-0 grid gap-10"
+    >
+      <p className="text-xl">تایید کد پیامک شده</p>
       <label htmlFor="input">کد تایید را وارد کنید</label>
-      <input
-        type="text"
-        id="input"
-        placeholder="کد تایید"
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-      />
-      <button type="submit">ورود</button>
-      <button onClick={() => setStep(1)}>تغییر شماره موبایل</button>
+      <div className="grid gap-5">
+        <span className="font-extralight text-sm text-slate-500">
+          کد پیامک شده به شماره {mobile} را وارد کنید
+        </span>
+        <input
+          type="text"
+          id="input"
+          placeholder="کد تایید پنج رقمی"
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+          ref={input}
+          className="border border-gray-400 rounded-[5px] p-2 text-sm focus:border-primary-red"
+        />
+        <button
+          onClick={() => setStep(1)}
+          className="justify-self-end bg-slate-100 text-gray-400 font-extralight px-2  py-1 rounded-lg w-fit text-xs"
+        >
+          تغییر شماره موبایل
+        </button>
+      </div>
+      <button type="submit" className="btn btn-md">
+        ورود
+      </button>
       <ToastContainer rtl={true} />
     </form>
   );
