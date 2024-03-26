@@ -1,13 +1,14 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile as queryFn } from "services/user";
+import Loader from "components/modules/Loader";
 
 //Pages
-import PageNotFound from "pages/404";
-import AdminPage from "pages/AdminPage";
+import HomePage from "pages/HomePage";
 import AuthPage from "pages/AuthPage";
 import DashboardPage from "pages/DashboardPage";
-import HomePage from "pages/HomePage";
+import AdminPage from "pages/AdminPage";
+import PageNotFound from "pages/404";
 
 function Router() {
   const { data, isPending, error } = useQuery({
@@ -16,7 +17,7 @@ function Router() {
   });
   console.log({ data, isPending, error });
 
-  if (isPending) return <h1>Loading...</h1>;
+  if (isPending) return <Loader />;
 
   return (
     <Routes>

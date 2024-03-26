@@ -7,6 +7,14 @@ export default {
       fontFamily: {
         persian: ["Vazir", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        primary: {
+          red: "#a62626",
+        },
+      },
+      animation: {
+        "loader": "rotation 1s linear infinite",
+      },
     },
   },
   plugins: [],
