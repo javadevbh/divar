@@ -25,7 +25,7 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
   return (
     <form
       onSubmit={submitHandler}
-      className=" mt-24 mx-auto max-w-[500px] border border-gray-400 rounded-[5px] p-7 pb-0 grid gap-10"
+      className=" mt-24 mx-auto max-w-[500px] border border-gray-400 rounded-[5px] p-7 pb-0 grid gap-10 mb-36"
     >
       <p className="text-xl">ورود به حساب کاربری</p>
       <label htmlFor="input">شماره موبایل خود را وارد کنید</label>
@@ -41,7 +41,7 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
           value={mobile}
           onChange={(e) => setMobile(e.target.value)}
           ref={input}
-          className="border border-gray-400 rounded-[5px] p-2 text-sm focus:border-primary-red"
+          className="input-gray input-md"
         />
       </div>
       <button type="submit" className="btn-red btn-md">

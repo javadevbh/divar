@@ -37,7 +37,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
   return (
     <form
       onSubmit={submitHandler}
-      className=" mt-24 mx-auto max-w-[500px] border border-gray-400 rounded-[5px] p-7 pb-0 grid gap-10"
+      className=" mt-24 mx-auto max-w-[500px] border border-gray-400 rounded-[5px] p-7 pb-0 grid gap-10 mb-32"
     >
       <p className="text-xl">تایید کد پیامک شده</p>
       <label htmlFor="input">کد تایید را وارد کنید</label>
@@ -52,9 +52,10 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
           value={code}
           onChange={(e) => setCode(e.target.value)}
           ref={input}
-          className="border border-gray-400 rounded-[5px] p-2 text-sm focus:border-primary-red"
+          className="input-gray input-md"
         />
         <button
+          type="button"
           onClick={() => setStep(1)}
           className="justify-self-end bg-slate-100 text-gray-400 font-extralight px-2  py-1 rounded-lg w-fit text-xs"
         >

@@ -14,4 +14,10 @@
   .divider-y {
     @apply inline-block h-6 w-[1.5px] bg-primary-gray box-border border-none;
   }
+  .input-gray {
+    @apply border border-gray-400 focus:border-primary-red;
+  }
+  .input-md {
+    @apply rounded-[5px] p-2 text-sm;
+  }
 }

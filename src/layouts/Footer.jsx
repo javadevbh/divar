@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="px-content">
+    <footer className="px-content bg-primary-gray p-1">
       <p className="text-center p-2 tracking-wide">
         {" "}
         توسعه یافته توسط{" "}
