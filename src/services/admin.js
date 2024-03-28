@@ -2,4 +2,8 @@ import api from "configs/api";
 
 const addCategory = (data) => api.post("/category", data);
 
-export { addCategory };
+const getCategories = () => api.get("/category");
+
+const deleteCategory = (id) => api.delete(`/category/${id}`);
+
+export { addCategory, getCategories, deleteCategory };

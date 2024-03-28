@@ -17,7 +17,7 @@ function Router() {
   });
   console.log({ data, isPending, error });
 
-  if (isPending) return <Loader />;
+  if (isPending) return <Loader height="100vh" />;
 
   return (
     <Routes>

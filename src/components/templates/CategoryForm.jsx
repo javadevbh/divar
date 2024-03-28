@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addCategory as mutationFn } from "services/admin";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import notify from "src/helpers/toastify";
+import notify from "helpers/toastify";
 
 function CategoryForm() {
+  const queryClient = useQueryClient();
   const [form, setForm] = useState({ name: "", slug: "", icon: "" });
 
   const { mutate, isPending, data, isError } = useMutation({ mutationFn });
 
   useEffect(() => {
-    if (data?.status === 201) {
+    if (!data) return;
+    if (data.status === 201) {
       notify("success", "دسته بندی با موفقیت اضافه شد");
       setForm({ name: "", slug: "", icon: "" });
     }
@@ -33,7 +33,10 @@ function CategoryForm() {
     if (!form.name || !form.slug || !form.icon)
       return notify("warning", "لطفا همه فیلد هارا پر کنید");
 
-    mutate(form);
+    mutate(form, {
+      onSuccess: () =>
+        queryClient.invalidateQueries({ queryKey: ["get-categories"] }),
+    });
   };
 
   if (isError) notify("error", "مشکلی پیش آمده، لطفا بعدا تلاش کنید");
@@ -77,7 +80,6 @@ function CategoryForm() {
       >
         ایجاد
       </button>
-      <ToastContainer rtl={true} />
     </form>
   );
 }

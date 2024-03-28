@@ -5,6 +5,9 @@
   .btn-gray {
     @apply transition-all duration-200 bg-none text-slate-500 hover:text-black hover:bg-[rgba(0,0,0,.04)] cursor-pointer rounded-lg;
   }
+  .btn-xs {
+    @apply w-20 p-1 flex justify-center text-sm;
+  }
   .btn-sm {
     @apply flex-balance justify-center space-x-reverse space-x-2 p-2 text-sm w-24;
   }
