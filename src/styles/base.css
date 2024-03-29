@@ -12,7 +12,8 @@
   }
   button,
   input,
-  select {
+  select,
+  textarea {
     @apply font-[inherit] outline-none;
   }
   h1,
