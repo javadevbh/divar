@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getCategories as queryFn } from "services/admin";
-import { createPost } from "services/post";
+import { createPost as mutationFn } from "services/post";
 import notify from "helpers/toastify";
 
 function AddPostForm() {
+  const queryClient = useQueryClient();
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -18,6 +19,17 @@ function AddPostForm() {
     queryFn,
   });
 
+  const { mutate, data: mutateData } = useMutation({ mutationFn });
+
+  useEffect(() => {
+    if (!mutateData) return;
+    if (mutateData.status === 200) {
+      notify("success", "آگهی با موفقیت ثبت شد");
+    } else {
+      notify("error", "مشکلی پیش آمده لطفا بعدا تلاش کنید");
+    }
+  }, [mutateData]);
+
   const changeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -30,17 +42,10 @@ function AddPostForm() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    for (let i in form) {
-      formData.append(i, form[i]);
-    }
-
-    const { result } = await createPost(form);
-    if (result.status === 200) {
-      notify("success", result.data.message);
-    } else {
-      notify("error", "مشکلی پیش آمده لطفا بعدا تلاش کنید");
-    }
+    mutate(form, {
+      onSuccess: () =>
+        queryClient.invalidateQueries({ queryKey: ["my-post-list"] }),
+    });
   };
   return (
     <form

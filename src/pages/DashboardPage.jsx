@@ -1,12 +1,11 @@
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import AddPostForm from "components/templates/AddPostForm";
+import PostList from "src/components/templates/PostList";
 
 function DashboardPage() {
   return (
     <div>
       <AddPostForm />
-      <ToastContainer rtl={true} />
+      <PostList />
     </div>
   );
 }

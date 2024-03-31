@@ -4,8 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfile as queryFn } from "services/user";
 import { checkOtp } from "services/auth";
 import { setCookie } from "utils/cookie";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { p2e } from "utils/numbers";
 import notify from "helpers/toastify";
 
 function CheckOtpForm({ code, setCode, mobile, setStep }) {
@@ -25,7 +24,7 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
 
     if (code.length !== 5) return notify("error", "کد تایید باید 5 رقم باشد");
 
-    const { response, error } = await checkOtp(mobile, code);
+    const { response, error } = await checkOtp(mobile, p2e(code));
     if (response) {
       setCookie(response.data);
       navigate("/");
@@ -65,7 +64,6 @@ function CheckOtpForm({ code, setCode, mobile, setStep }) {
       <button type="submit" className="btn-red btn-md">
         ورود
       </button>
-      <ToastContainer rtl={true} />
     </form>
   );
 }

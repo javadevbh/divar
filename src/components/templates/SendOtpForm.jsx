@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { sendOtp } from "services/auth";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import notify from "helpers/toastify";
+import { p2e } from "utils/numbers";
 
 function SendOtpForm({ setStep, mobile, setMobile }) {
   const input = useRef();
@@ -17,7 +16,7 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
     if (mobile.length !== 11)
       return notify("error", "شماره موبایل باید 11 رقم باشد!");
 
-    const { response, error } = await sendOtp(mobile);
+    const { response, error } = await sendOtp(p2e(mobile));
     if (response) setStep(2);
     if (error) notify("error", "مشکلی پیش آمده، لطفا بعدا تلاش کنید");
   };
@@ -47,7 +46,6 @@ function SendOtpForm({ setStep, mobile, setMobile }) {
       <button type="submit" className="btn-red btn-md">
         ارسال کد تایید
       </button>
-      <ToastContainer rtl={true} />
     </form>
   );
 }
