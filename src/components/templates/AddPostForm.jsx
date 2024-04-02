@@ -42,6 +42,16 @@ function AddPostForm() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    if (
+      !form.title ||
+      !form.content ||
+      !form.amount ||
+      !form.city ||
+      !form.images
+    )
+      return notify("warning", "لطفا فیلد های خواسته شده را پر کنید");
+
     mutate(form, {
       onSuccess: () =>
         queryClient.invalidateQueries({ queryKey: ["my-post-list"] }),
@@ -56,27 +66,35 @@ function AddPostForm() {
       <h3 className="border-b-[3px] border-primary-red w-fit mb-2">
         افزودن آگهی
       </h3>
-      <label htmlFor="title">عنوان</label>
+      <label htmlFor="title">
+        عنوان<span className="text-red-500">*</span>
+      </label>
       <input
         type="text"
         name="title"
         id="title"
         className="input-gray input-md mb-3"
       />
-      <label htmlFor="content">توضیحات</label>
+      <label htmlFor="content">
+        توضیحات<span className="text-red-500">*</span>
+      </label>
       <textarea
         name="content"
         id="content"
         className="input-gray input-md mb-3"
       />
-      <label htmlFor="amount">قیمت</label>
+      <label htmlFor="amount">
+        قیمت<span className="text-red-500">*</span>
+      </label>
       <input
         type="number"
         name="amount"
         id="amount"
         className="input-gray input-md mb-3"
       />
-      <label htmlFor="city">شهر</label>
+      <label htmlFor="city">
+        شهر<span className="text-red-500">*</span>
+      </label>
       <input
         type="text"
         name="city"
@@ -95,7 +113,9 @@ function AddPostForm() {
           </option>
         ))}
       </select>
-      <label htmlFor="images">عکس</label>
+      <label htmlFor="images">
+        عکس<span className="text-red-500">*</span>
+      </label>
       <input
         type="file"
         name="images"

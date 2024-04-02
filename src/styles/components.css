@@ -12,7 +12,7 @@
     @apply flex-balance justify-center space-x-reverse space-x-2 p-2 text-sm w-24;
   }
   .btn-md {
-    @apply w-32 p-2 flex justify-center text-sm;
+    @apply w-32 p-2 flex justify-center text-sm mb-5;
   }
   .divider-y {
     @apply inline-block h-6 w-[1.5px] bg-primary-gray box-border border-none;
