@@ -43,7 +43,7 @@ function Header() {
             <p>مشهد</p>
           </span>
         </div>
-        <div className="flex-balance space-x-reverse space-x-4">
+        <div className="flex-balance md:space-x-reverse space-x-reverse space-x-1 md:space-x-4">
           <div
             ref={dropdown}
             onClick={() => setIsOpen((isOpen) => !isOpen)}
@@ -54,7 +54,7 @@ function Header() {
               <p>دیوار من</p>
             </span>
             {isOpen && (
-              <div className="absolute mt-2 w-56 rounded-md shadow-around bg-white p-2 flex flex-col gap-2">
+              <div className="absolute mt-2 w-48 md:w-56 rounded-md shadow-around bg-white p-2 flex flex-col gap-2">
                 {data ? (
                   <div className="border-b border-primary-gray pb-2">
                     <div className="flex-balance space-x-reverse space-x-2 text-gray-500 p-1">

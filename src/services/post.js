@@ -1,7 +1,8 @@
+import api from "configs/api";
 import axios from "axios";
 import { getCookie } from "utils/cookie";
 
-const createPost = (form) => {
+const createPost = async (form) => {
   const formData = new FormData();
   for (let i in form) {
     formData.append(i, form[i]);
@@ -19,4 +20,6 @@ const createPost = (form) => {
     .catch((error) => error);
 };
 
-export { createPost };
+const getAllPosts = () => api.get("/");
+
+export { createPost, getAllPosts };

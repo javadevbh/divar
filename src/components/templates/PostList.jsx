@@ -14,7 +14,7 @@ function PostList() {
         آگهی های شما
       </h3>
       {isPending ? (
-        <Loader height="300px" />
+        <Loader />
       ) : (
         data.data.posts.map((post) => (
           <li

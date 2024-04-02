@@ -37,7 +37,7 @@ function CategoryList() {
         دسته بندی ها
       </h3>
       {isPending ? (
-        <Loader height="500px" />
+        <Loader />
       ) : (
         data.data.map((i) => (
           <li
