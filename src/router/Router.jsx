@@ -15,7 +15,6 @@ function Router() {
     queryKey: ["profile"],
     queryFn,
   });
-  console.log({ data, isPending, error });
 
   if (isPending) return <Loader />;
 
