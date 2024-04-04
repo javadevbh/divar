@@ -1,3 +1,5 @@
+import moment from "moment-jalaali";
+
 const shortenDescription = (desc) => {
   const partialText = desc.substring(0, 10);
   const finalText = partialText + "...";
@@ -27,9 +29,35 @@ const filterProducts = (products, category) => {
   return { posts: filteredProducts };
 };
 
+const convertDateFormat = (dateString) => {
+  const parts = dateString.split("/");
+  const date = new Date(parts[2], parts[0] - 1, parts[1]);
+
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
+const convertDate = (datePublished) => {
+  const currentDate = moment();
+  const enteredDate = moment(datePublished, "YYYY-MM-DD");
+  const yearsDifference = currentDate.diff(enteredDate, "years");
+  if (yearsDifference) return `${yearsDifference} سال پیش`;
+
+  const monthsDifference = currentDate.diff(enteredDate, "months");
+  if (monthsDifference) return `${monthsDifference} ماه پیش`;
+
+  const daysDifference = currentDate.diff(enteredDate, "days");
+  if (daysDifference == 0) return "امروز";
+  return `${daysDifference} روز پیش`;
+};
+
 export {
   shortenDescription,
   createQueryObject,
   getInitialQuery,
   filterProducts,
+  convertDate,
+  convertDateFormat,
 };

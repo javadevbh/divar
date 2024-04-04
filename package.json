@@ -13,6 +13,7 @@
     "@tanstack/react-query": "^5.28.6",
     "@tanstack/react-query-devtools": "^5.28.6",
     "axios": "^1.6.8",
+    "moment-jalaali": "^0.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",

@@ -9,6 +9,7 @@ import AuthPage from "pages/AuthPage";
 import DashboardPage from "pages/DashboardPage";
 import AdminPage from "pages/AdminPage";
 import PageNotFound from "pages/404";
+import PostDetailsPage from "src/pages/PostDetailsPage";
 
 function Router() {
   const { data, isPending, error } = useQuery({
@@ -39,6 +40,7 @@ function Router() {
           )
         }
       />
+      <Route path="/:id" element={<PostDetailsPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

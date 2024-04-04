@@ -9,7 +9,7 @@ function PostList() {
   const { data, isPending } = useQuery({ queryKey: ["my-post-list"], queryFn });
 
   return (
-    <ul className="grid gap-4 mt-10">
+    <ul className="grid gap-4 my-10">
       <h3 className="border-b-[3px] border-primary-red w-fit mb-2">
         آگهی های شما
       </h3>
