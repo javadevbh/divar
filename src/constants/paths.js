@@ -5,6 +5,7 @@ export const paths = [
   "configs",
   "constants",
   "helpers",
+  "hooks",
   "layouts",
   "pages",
   "router",

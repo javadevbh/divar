@@ -1,7 +1,9 @@
+import { useScrollToTop } from "hooks/useScrollToTop";
 import AddPostForm from "components/templates/AddPostForm";
-import PostList from "src/components/templates/PostList";
+import PostList from "components/templates/PostList";
 
 function DashboardPage() {
+  useScrollToTop();
   return (
     <div>
       <AddPostForm />

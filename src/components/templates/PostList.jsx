@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getPosts as queryFn } from "services/user";
 import Loader from "../modules/Loader";
@@ -6,7 +7,14 @@ import { shortenDescription } from "helpers/helpers";
 
 function PostList() {
   const baseURL = import.meta.env.VITE_BASE_URL;
-  const { data, isPending } = useQuery({ queryKey: ["my-post-list"], queryFn });
+  const { data, isPending, refetch } = useQuery({
+    queryKey: ["my-post-list"],
+    queryFn,
+  });
+
+  useEffect(() => {
+    refetch()
+  } , [])
 
   return (
     <ul className="grid gap-4 my-10">

@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getAllPosts as queryFn } from "src/services/post";
-import { convertDate, convertDateFormat } from "src/helpers/helpers";
-import Loader from "src/components/modules/Loader";
-
-import { CgDanger } from "react-icons/cg";
-import { FaChevronLeft } from "react-icons/fa";
-import PostDetailsSidebar from "src/components/templates/PostDetailsSidebar";
+import { getAllPosts as queryFn } from "services/post";
+import { useScrollToTop } from "hooks/useScrollToTop";
+import Loader from "components/modules/Loader";
+import PostDetailsSidebar from "components/templates/PostDetailsSidebar";
 
 function PostDetailsPage() {
+  useScrollToTop();
   const { id } = useParams();
   const [post, setPost] = useState({});
   const baseURL = import.meta.env.VITE_BASE_URL;
@@ -27,7 +25,7 @@ function PostDetailsPage() {
 
   return (
     <div className="flex lg:flex-row flex-col-reverse gap-10 mt-24 mb-40 mx-auto w-fit">
-     <PostDetailsSidebar post={post}/>
+      <PostDetailsSidebar post={post} />
       <div>
         <img
           src={`${baseURL}/${post?.images && post?.images[0]}`}

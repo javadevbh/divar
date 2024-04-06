@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useScrollToTop } from "hooks/useScrollToTop";
 
 //Components
 import SendOtpForm from "components/templates/SendOtpForm";
 import CheckOtpForm from "components/templates/CheckOtpForm";
 
 function AuthPage() {
+  useScrollToTop();
   const [step, setStep] = useState(1);
   const [mobile, setMobile] = useState("");
   const [code, setCode] = useState("");

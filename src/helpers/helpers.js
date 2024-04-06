@@ -25,7 +25,7 @@ const getInitialQuery = (searchParams) => {
 
 const filterProducts = (products, category) => {
   if (!category) return products;
-  const filteredProducts = products.posts.filter((p) => p.category == category);
+  const filteredProducts = products?.posts.filter((p) => p.category == category);
   return { posts: filteredProducts };
 };
 

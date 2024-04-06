@@ -4,11 +4,13 @@ import { useSearchParams } from "react-router-dom";
 import { getCategories } from "services/admin";
 import { getAllPosts } from "services/post";
 import { filterProducts, getInitialQuery } from "helpers/helpers";
+import { useScrollToTop } from "hooks/useScrollToTop";
 import Main from "components/templates/Main";
 import Sidebar from "components/templates/Sidebar";
 import Loader from "components/modules/Loader";
 
 function HomePage() {
+  useScrollToTop();
   const [query, setQuery] = useState({});
   const [displayed, setDisplayed] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();

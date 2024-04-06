@@ -1,9 +1,12 @@
-
+import { useScrollToTop } from "hooks/useScrollToTop";
 
 function PageNotFound() {
+  useScrollToTop();
   return (
-    <div>PageNotFound</div>
-  )
+    <div className="h-[1000px]">
+      <img src="404.png" alt="pageNotFound" />
+    </div>
+  );
 }
 
-export default PageNotFound
+export default PageNotFound;
