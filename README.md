@@ -8,9 +8,9 @@
 ---
 ## To run the project locally:
 
-1.Download the files from current repository and run the project using `npm run dev`.
+1.Download the files from current repository and install dependencies with `npm i`.Then run the project using `npm run dev`.
 
-2.Download the files from [this repository](https://github.com/javadevbh/divar-api) and run the project using `npm start`.
+2.Download the files from [this repository](https://github.com/javadevbh/divar-api) and install dependencies with `npm i`.Then run the project using `npm start`.
 
 Ensure both projects are running simultaneously by executing the commands in separate terminal windows.
 ---
