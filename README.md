@@ -1,5 +1,5 @@
 <div>
-  <img src="https://s8.uupload.ir/files/untitled_project_1hee.gif" border="0" alt="آپلود عکس" />
+  <img src="https://s8.uupload.ir/files/untitled_project_1hee.gif">
 </div>
 
 ---
