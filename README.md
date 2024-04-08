@@ -1,10 +1,10 @@
 <div>
-  <img src="https://github.com/javadevbh/divar/assets/122552232/f79035fb-bea9-4990-8c53-b9c5937a6e06">
+  <img src="https://github.com/javadevbh/divar/assets/122552232/c7e00a0b-7c99-4cc4-bc8f-7d714c5a6f64">
 </div>
 
 ---
 # A weblog site built using ReactJS, Redux, and GraphQL.
-## [review online](https://javadbahrami-webolog.netlify.app/)
+## [review demo](https://s8.uupload.ir/files/untitled_project_1hee.gif)
 ---
 ## tips
 * Single Page Application
