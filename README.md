@@ -3,7 +3,7 @@
 </div>
 
 ---
-# A weblog site built using ReactJS, Redux, and GraphQL.
+# Divar site.
 ## [review demo](https://s8.uupload.ir/files/untitled_project_1hee.gif)
 ---
 ## To run the project locally:
