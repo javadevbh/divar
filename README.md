@@ -6,25 +6,34 @@
 # A weblog site built using ReactJS, Redux, and GraphQL.
 ## [review demo](https://s8.uupload.ir/files/untitled_project_1hee.gif)
 ---
+## To run the project locally:
+
+1.Download the files from current repository and run the project using `npm run dev`.
+
+2.Download the files from [this repository](https://github.com/javadevbh/divar-api) and run the project using `npm start`.
+
+Ensure both projects are running simultaneously by executing the commands in separate terminal windows.
+---
 ## tips
 * Single Page Application
-* Ability to add articles to bookmarks or remove them.
-* Saving bookmarks and article information in local storage.
-* Ability to like and comment on each article.
-* Displaying like and comment counts on each article card.
-* Author details page
-* Displaying article comments on each article's page.
-* Displaying articles and comments' publication date in the Persian calendar.
+* Authentication with OTP system: Users can securely authenticate using a one-time password (OTP) system.
+* Login code sending to the backend like an SMS: Upon authentication, login codes are sent to the backend for verification, functioning similarly to SMS delivery.
+* Authorization using access and refresh tokens: Access and refresh tokens are employed for authorization, ensuring secure access to system resources.
+* Admin panel: An administrative interface is provided for managing system settings.
+* Users can add posts, which are then added to the backend: Users have the capability to create and submit posts, with each post being stored in the backend database.
+* Filtering posts by category: Posts can be filtered based on their assigned categories, facilitating efficient content navigation.
+* Parsing filter queries from the URL: Filter queries embedded in the URL are parsed to dynamically refine post displays according to user preferences.
+* Post details page
 * Full responsiveness across mobile, tablet, laptop, and desktop devices
 ---
 # web development technologies
 ## Front-End
 * Reactjs
-* Redux(Redux toolkit)
-* Material UI
-* GraphQL
+* React Query
+* Tailwindcss
 ## Back-End
-* GraphCMS
+* Nodejs
+* MongoDB
 ---
 ## contact me
 * *[Email](mailto:javadev14bh@gmail.com)*
